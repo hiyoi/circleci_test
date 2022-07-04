@@ -9,7 +9,7 @@ jobs:
 
 
 workflows:
-  pr-workfloww:
+  auto-deoploy:
     jobs:
       - build
     when:
