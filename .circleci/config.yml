@@ -7,10 +7,13 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
 
-
 workflows:
   auto-deoploy:
     jobs:
-      - build
-    when:
-      equal: [ development, << pipeline.git.branch >> ]
+      - build:
+          filters:
+            branches:
+              only:
+                - development
+
+
